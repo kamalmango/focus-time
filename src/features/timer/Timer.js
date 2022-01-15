@@ -4,10 +4,13 @@ import { ProgressBar } from 'react-native-paper';
 import { Countdown } from '../../components/Countdown';
 import { RoundedButton } from '../../components/RoundedButton';
 import { Timing } from './Timing';
+import { useKeepAwake } from 'expo-keep-awake';
 import { colors } from '../../utils/colors';
 import { spacing } from '../../utils/sizes';
 
 export const Timer = ({ focusSubject }) => {
+  useKeepAwake();
+  
   const [minutes, setMinutes] = useState(0.1);
   const [isStarted, setIsStarted] = useState(false)
   const [progress, setProgress] = useState(1)
