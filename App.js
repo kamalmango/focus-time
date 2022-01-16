@@ -6,6 +6,7 @@ import { FocusHistory } from './src/features/focus/FocusHistory';
 import { Timer } from './src/features/timer/Timer';
 import { colors } from './src/utils/colors';
 import { spacing } from './src/utils/sizes';
+import { uuidv4 } from './src/utils/uuid';
 
 const STATUSES = {
   COMPLETE: 1,
@@ -17,7 +18,7 @@ export default function App() {
   const [focusHistory, setFocusHistory] = useState([]);
 
   const addFocusHistorySubjectWithStatus = (subject, status) => {
-    setFocusHistory([...focusHistory, { key: String(focusHistory.length + 1), subject, status }])
+    setFocusHistory([...focusHistory, { key: uuidv4(), subject, status }])
   }
 
   const onClear = () => {
