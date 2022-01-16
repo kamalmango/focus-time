@@ -11,14 +11,14 @@ import { spacing } from '../../utils/sizes';
 const DEFAULT_TIME = 0.1;
 
 export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
-  useKeepAwake();
-  const interval = React.useRef(null);
-  const [minutes, setMinutes] = useState(DEFAULT_TIME );
+  useKeepAwake()
+  const interval = React.useRef(null)
+  const [minutes, setMinutes] = useState(DEFAULT_TIME )
   const [isStarted, setIsStarted] = useState(false)
   const [progress, setProgress] = useState(1)
 
   const onProgress = (progress) => {
-    setProgress(progress)
+    setProgress(progress);
   }
 
   const vibrate = () => {
