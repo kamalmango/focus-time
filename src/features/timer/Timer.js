@@ -46,7 +46,7 @@ export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
   };
 
   const changeTime = (min) => {
-    setMinutes(1);
+    setMinutes(min);
     setProgress(1);
     setIsStarted(false);
   };
